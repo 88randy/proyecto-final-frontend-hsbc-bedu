@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="col-md-6">
+        <h2>Agregar cliente</h2>
+        <form [formGroup]="createForm" (ngSubmit)="addCustomer()">
+            <div class="form-group">
+                <label for="customer">Cliente</label>
+                <input type="text" class="form-control" id="customer" formControlName="customer">
+            </div>
+            <div class="pt-3">
+                <button type="submit" class="btn btn-success">Crear</button>
+            </div>
+        </form>
+    </div>
+</div>

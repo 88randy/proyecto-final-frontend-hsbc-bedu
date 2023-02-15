@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Proyecto final</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a href="/home" class="nav-link active" routerLink="home">Inicio </a>
+        <a href="/admin" class="nav-link" routerLink="admin" *ngIf="showAdminBoard">Tablero Admin</a>
+        <a href="/mod" class="nav-link" routerLink="mod" *ngIf="showModeratorBoard">Tablero Moderador</a>
+        <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">Tablero Usuario</a>
+        <a href="/register" class="nav-link" routerLink="register" *ngIf="!isLoggedIn">Registrate</a>
+        <a href="/login" class="nav-link" routerLink="login" *ngIf="!isLoggedIn">Iniciar sesión</a>
+        <a href class="nav-link" (click)="logout()" *ngIf="isLoggedIn">Cerrar sesión</a>
+        <b><a href="/profile" class="nav-link text-end" routerLink="profile" *ngIf="isLoggedIn">{{ username }}</a></b>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <div class="row">
+    <router-outlet></router-outlet>
+  </div>
+</div>

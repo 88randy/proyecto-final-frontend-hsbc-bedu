@@ -1,0 +1,52 @@
+<div class="site" *ngIf="responseStatus > 300">
+    <div class="sketch">
+        <div class="bee-sketch red"></div>
+        <div class="bee-sketch blue"></div>
+    </div>
+    <div *ngIf="responseStatus === 401">
+        <h1 class="h1-custom">Error 401: <small class="small-custom">No autorizado</small></h1>
+    </div>
+    <div *ngIf="responseStatus === 403">
+        <h1 class="h1-custom">Error 403: <small class="small-custom">Prohibido</small></h1>
+    </div>
+    <div *ngIf="responseStatus === 500">
+        <h1 class="h1-custom">Error 500: <small class="small-custom">Error interno del servidor</small></h1>
+    </div>
+</div>
+<div class="col-md-12" *ngIf="responseStatus === 200">
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-6">
+                <h2>Lista de productos</h2>
+            </div>
+            <div class="col-6 text-end">
+                <a [routerLink]="['/products/add/']"><span><i class="bi bi-plus-circle" style="font-size: 35px;"></i></span></a>
+            </div>
+        </div>
+        <hr>
+        <table class="table table-striped text-center">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products">
+                    <td>{{ product.id }}</td>
+                    <td>{{ product.name }}</td>
+                    <td>$ {{ product.price }}</td>
+                    <td>
+                        <a [routerLink]="['/products/search/', product.id]" class="btn btn-primary">Consultar</a>
+                        <span> &nbsp; </span>
+                        <a [routerLink]="['/products/update/', product.id]" class="btn btn-secondary">Editar</a>
+                        <span> &nbsp; </span>
+                        <a [routerLink]="['/products/delete/', product.id]" class="btn btn-danger">Borrar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

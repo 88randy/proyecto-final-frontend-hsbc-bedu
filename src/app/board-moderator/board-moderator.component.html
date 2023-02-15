@@ -1,0 +1,91 @@
+<div class="row pt-5">
+    <h1>Tablero para usuarios Administradores</h1>
+    <hr class="hr hr-blurry" />
+    <h3>Clientes</h3>
+    <div class="col-12">
+        <div class="row">
+            <div class="col-4">
+                <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Listar</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Listado de clientes</h5>
+                        <p class="card-text">Se muestra un listado de clientes, dentro podrás encontrar las funciones de editar y consultar su información</p>
+                        <div class="text-end">
+                            <button [routerLink]="['/customers']" type="button" class="btn btn-light">Listar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Crear</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Crear cliente</h5>
+                        <p class="card-text">Crear cliente para almacenarlo en la base de datos.</p>
+                        <div class="text-end">
+                            <button [routerLink]="['/customers/add/']" type="button" class="btn btn-light">Crear</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h3>Productos</h3>
+    <div class="col-12">
+        <div class="row">
+            <div class="col-4">
+                <div class="card text-dark bg-info mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Listar</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Listado de productos</h5>
+                        <p class="card-text">Se muestra un listado de productos, dentro podrás encontrar las funciones de editar y consultar su información</p>
+                        <div class="text-end">
+                            <button [routerLink]="['/products']" type="button" class="btn btn-light">Listar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card text-dark bg-info mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Crear</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Crear producto</h5>
+                        <p class="card-text">Crear producto para almacenarlo en la base de datos.</p>
+                        <div class="text-end">
+                            <button [routerLink]="['/products/add/']" type="button" class="btn btn-light">Crear</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h3>Ordenes de compra</h3>
+    <div class="col-12">
+        <div class="row">
+            <div class="col-4">
+                <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Listar</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Listado de ordenes de compra</h5>
+                        <p class="card-text">Se muestra un listado de las ordenes de compra, dentro podrás encontrar las funciones editar y consultar su información</p>
+                        <div class="text-end">
+                            <button [routerLink]="['/purchase-orders']" type="button" class="btn btn-dark">Listar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Crear</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Crear orden de compra</h5>
+                        <p class="card-text">Crear una orden de compra para almacenarla en la base de datos.</p>
+                        <div class="text-end">
+                            <button [routerLink]="['/purchase-orders/add/']" type="button" class="btn btn-dark">Crear</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="container">
+        <div class="col-md-12">
+            <h2>Editar orden de compra</h2>
+            <hr>
+            <form (ngSubmit)="updatePurchaseOrder()">
+                <div class="form-group pt-3">
+                    <label for="customer"><h4>Cliente</h4></label>
+                    <select id="customer" name="customer" class="form-control" [(ngModel)]="purchaseOrder.customer.id">
+                        <option *ngFor="let customer of customers" [ngValue]="customer.id">{{customer.customer}}</option>
+                    </select>
+                </div>
+                <div class="form-group pt-3">
+                    <label for="items"><h4>Productos</h4></label>
+                    <div class="row">
+                        <div class="col-md-6 pt-3" *ngFor="let item of purchaseOrder.items; let i = index;">
+                            <div class="form-group">
+                                <label for="product"><h5>Producto</h5></label>
+                                <select id="product" name="product" class="form-control" [(ngModel)]="item.product.id">
+                                    <option *ngFor="let product of products" [ngValue]="product.id">{{product.name}}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group pt-3">
+                                <label for="quantity"><h5>Cantidad</h5></label>
+                                <input id="quantity" name="quantity" type="number" class="form-control"
+                                    [(ngModel)]="item.quantity" min="1">
+                            </div>
+                            <div class="pt-3">
+                                <button type="button" class="btn btn-danger" (click)="removeProduct(i)">Remover</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group pt-3">
+                        <label for="newProduct"><h4>Nuevo producto</h4></label>
+                        <select id="newProduct" name="newProduct" class="form-control" [(ngModel)]="newProduct">
+                            <option *ngFor="let product of products" [ngValue]="product">{{product.name}}</option>
+                        </select>
+                        <label for="newQuantity"><h5>Cantidad</h5></label>
+                        <input id="newQuantity" name="newQuantity" type="number" class="form-control"
+                            [(ngModel)]="newQuantity" min="1">
+                        <div class="pt-3">
+                            <button type="button" class="btn btn-primary" (click)="addProduct()">Agregar producto</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group pt-3">
+                    <label for="total"><h3>Total</h3></label>
+                    <input id="total" name="total" type="number" class="form-control" [value]="getTotal()" disabled min="0">
+                </div>
+                <div class="pt-3">
+                    <button type="submit" class="btn btn-primary">Actualizar</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
